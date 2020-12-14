@@ -1,4 +1,6 @@
 @import './homepage.css';
+@import './signin.css';
+@import './footer.css';
 
 * {
     margin: 0;
@@ -14,47 +16,51 @@
     font-family: Arial, Helvetica, sans-serif;
   }
 
-  nav a {
+  #nav-bar a {
     color: rgb(6, 51, 90);
     text-decoration: none;
-    display: inline-block;
-    padding: 35px 5px;
-    /* margin-right: 30px; */
-    text-decoration: none;
+    font-size: 20px;
   }
-  nav {
+ 
+  #nav-bar {
+      padding: 20px;
+  }
+
+  #logo {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-left: 60px;
+      margin-right: 90px;
+  }
+
+  #logo div{
+    flex-direction: row;
     display: flex;
-    justify-content: space-between;
-    text-align: center;
-    width: 90%;
-  }
-  nav ul {
+}
+
+  #logo ul {
     flex-direction: row;
     display: flex;
     list-style: none;
   }
-  
-  nav img {
-    height: 20px;
-    width:20px;
-  }
-  
-  #logo {
-    padding: 35px 5px;
-    flex-direction: row;
-    display: flex;
-    justify-content: space-around;
+
+  #logo li {
+ margin-left: 15px;
   }
   
   #logo h1 {
     color: #7a2323;
-    margin-left: 70px;
-    font-size: 30px;
+    font-size: 50px;
   }
   
   #logo p {
     color: #ffffff;
-    margin-left: 100px;
     background-color: #7a2323;
-    width: 180px;
+    margin-left: 160px;
+    padding:20px;
+    width: 30vh;
+    text-align: center;
+    font-size: 22px;
+    /* padding:18px; */
   }
