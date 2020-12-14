@@ -12,11 +12,15 @@ const EventsSchema = new Schema(
     },
     description: String,
     maxParticipant: Number,
+    dateStart: Date,
+    dateEnd: Date,
+    time: Number,
     image: {
       type: String,
       default:
         "https://res.cloudinary.com/dke1st5wz/image/upload/v1607328768/sample.jpg",
     },
+    eventType: String,
     id_user: [{ type: Schema.Types.ObjectId, ref: "user" }],
   },
   { timestamps: true }
