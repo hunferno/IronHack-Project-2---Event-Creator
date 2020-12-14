@@ -54,6 +54,11 @@ if (dev_mode === true) {
 app.use(require("./middlewares/exposeLoginStatus"));
 app.use(require("./middlewares/exposeFlashMessage"));
 
+app.get("/", (req, res) => {
+res.render("homepage");
+}
+);
+
 // routers
 // app.use("/", require("./routes/index"));
 // app.use("/", require("./routes/auth"));
