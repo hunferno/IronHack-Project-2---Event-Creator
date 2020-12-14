@@ -54,15 +54,15 @@ if (dev_mode === true) {
 app.use(require("./middlewares/exposeLoginStatus"));
 app.use(require("./middlewares/exposeFlashMessage"));
 
-app.get("/", (req, res) => {
-res.render("homepage");
-}
-);
+// Require routers
+// app.use("/", require("./route/index"));
+app.use("/", require("./route/auth"));
+// app.use("/", require("./route/dashboard_sneaker"));
 
-// routers
-// app.use("/", require("./routes/index"));
-// app.use("/", require("./routes/auth"));
-// app.use("/", require("./routes/dashboard_sneaker"));
+// Connect to the home page
+app.get("/", (req, res) => {
+  res.render("homepage");
+});
 
 //******Test area (To be deleted later)****/
 //Render home page
