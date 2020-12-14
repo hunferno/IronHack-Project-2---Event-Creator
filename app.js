@@ -64,4 +64,20 @@ res.render("homepage");
 // app.use("/", require("./routes/auth"));
 // app.use("/", require("./routes/dashboard_sneaker"));
 
+//******Test area (To be deleted later)****/
+//Render home page
+// app.get("/", (req, res, next) => {
+//   res.render("index");
+// });
+
+// //Render signin page
+// app.get("/signin", (req, res, next) => {
+//   res.render("signin");
+// });
+
+// //Render signin page
+// app.get("/signup", (req, res, next) => {
+//   res.render("signup");
+// });
+
 module.exports = app;
