@@ -64,6 +64,8 @@ app.get("/", (req, res) => {
   res.render("homepage");
 });
 
+
+
 //******Test area (To be deleted later)****/
 //Render home page
 // app.get("/", (req, res, next) => {
