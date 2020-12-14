@@ -1,24 +1,53 @@
-<section id="signin">
+<div id="container-div">
+<div class="container" id="container">
+        {{!-- <div class="form-container sign-up-container">
+            <form action="" method="post" class="signin-form form">
+                <h1>Create Account</h1>
+                <div class="social-container">
+                    <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+                    <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+                <span>or use your email for registration</span>
+                <input type="text" placeholder="Name" />
+                <label for="email" class="identification-label">Email</label>
+                <input id="email" type="email" class="input-text" placeholder="hanane.azz@gmail.com" required
+                    value="hanane@azz.com" name="email">
+                <label for="password" class="identification-label">Password</label>
 
-    <header class="signin-header">
-        <h1 class="signin-title">Welcome back</h1>
-    </header>
-
-    <form action="" method="post" class="signin-form form">
-        <div class="signin-email identification">
-            <label for="email" class="identification-label">Email</label>
-            <input id="email" type="email" class="input-text" placeholder="hanane.azz@gmail.com" required
-                value="hanane@azz.com" name="email">
+                <input id="password" type="password" class="input-text" placeholder="••••••" required value="123456"
+                    name="password">
+                <a href="/signup">Sign Up</a>
+            </form>
+        </div> --}}
+        <div class="form-container sign-in-container">
+            <form action="#">
+                <h1>Sign in</h1>
+                <div class="social-container">
+                    <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+                    <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+                <span>or use your account</span>
+                <input type="email" placeholder="Email" />
+                <input type="password" placeholder="Password" />
+                <a href="#">Forgot your password?</a>
+                <button>Sign In</button>
+            </form>
         </div>
-
-        <div class="signin-password identification">
-            <label for="password" class="identification-label">Password</label>
-            <input id="password" type="password" class="input-text" placeholder="••••••" required value="123456"
-                name="password">
+        <div class="overlay-container">
+            <div class="overlay">
+                {{!-- <div class="overlay-panel overlay-left">
+                    <h1>Welcome Back!</h1>
+                    <p class="p-signin">To keep connected with us please login with your personal info</p>
+                    <button class="ghost" id="signIn">Sign In</button>
+                </div> --}}
+                <div class="overlay-panel overlay-right">
+                    <h1>Hello, Friend!</h1>
+                    <p class="p-signin">Enter your personal details and start journey with us</p>
+                    <button class="ghost" id="signUp">Sign Up</button>
+                </div>
+            </div>
         </div>
-
-        <button class="signin-btn form-btn-identification">SIGN IN</button>
-    </form>
-    <p class="signin-info-signup">Don't have an account yet? <a href="/signup">Sign Up</a></p>
-
-</section>
+</div>
+</div>
