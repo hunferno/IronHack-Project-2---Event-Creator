@@ -57,12 +57,15 @@ app.use(require("./middlewares/exposeFlashMessage"));
 // Require routers
 // app.use("/", require("./route/index"));
 app.use("/", require("./route/auth"));
+app.use("/", require("./route/event"));
 // app.use("/", require("./route/dashboard_sneaker"));
 
 // Connect to the home page
 app.get("/", (req, res) => {
   res.render("homepage");
 });
+
+
 
 
 
