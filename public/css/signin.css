@@ -34,7 +34,6 @@ button {
 	border-radius: 20px;
 	border: 1px solid #FF4B2B;
 	background-color: #FF4B2B;
-	color: #FFFFFF;
 	font-size: 12px;
 	font-weight: bold;
 	padding: 12px 45px;
@@ -51,9 +50,17 @@ button:focus {
 	outline: none;
 }
 
-button.ghost {
+button#signIn {
 	background-color: transparent;
 	border-color: #FFFFFF;
+	color: #FFFFFF;
+}
+
+button#signUp {
+	background-color: transparent;
+	border-color:  #FF416C;
+	color:  #FF416C;
+	margin: 15px 0;
 }
 
 form {
