@@ -46,6 +46,36 @@
           </div>
         </div>
       </div>
+
+<div id="form-date">
+<div id="start-date">
+<label class="label-date" for="start">Start date:</label>
+<input class="input-date" type="date" id="start" name="trip-start"
+       value="2018-07-22"
+       min="2018-01-01" max="2018-12-31">
+</div>
+<div id="end-date">
+<label class="label-date" for="start">End date:</label>
+<input class="input-date" type="date" id="end" name="trip-end"
+       value="2018-07-22"
+       min="2018-01-01" max="2018-12-31">
+</div>
+   </div>
+
+<div id="time-form">
+  <div>
+<label for="appt">start time meeting:</label>
+<input type="time" id="appt" name="appt"
+       min="09:00" max="18:00" required>
+  </div>
+<div>
+  <label for="appt">end time meeting:</label>
+<input type="time" id="appt" name="appt"
+       min="09:00" max="18:00" required>
+</div>
+</div>
+
+
       <div class="row form-block flex-column flex-sm-row">
       </div>
 
@@ -60,13 +90,11 @@
             <div class="">
             </div>
             {{!-- <div class=""> --}}
-              <label class="form-label">Max participants</label>
-              <div class="d-flex align-items-center">
-                <div class="btn btn-items btn-items-decrease">-</div>
-                <input class="form-control input-items" type="text" value="1" disabled>
-                <div class="btn btn-items btn-items-increase">+</div>
-              </div>
-            </div>
+ <label for="tentacles">Number of participants:</label>
+
+<input type="number" id="tentacles" name="tentacles"
+       min="0" max="100000">
+            
             {{!--
           </div> --}}
         </div>
@@ -78,34 +106,16 @@
           <h4>Photo</h4>
           <p class="text-muted text-sm">Add a photo of your event to attract as many participants as possible</p>
         </div>
-        <div class="col-lg-7 ml-auto">
-          <div class="form-group">
-            <form class="dropzone" id="demo-upload" action="/upload">
-              <div class="dz-message text-muted">
-                <p>Drop files here or click to upload.</p>
-                <p><span class="note">(This is just a demo dropzone. Selected files are <STRONG>not</STRONG> actually
-                    uploaded.)</span></p>
-              </div>
-              {{!--
-            </form> --}}
-          </div>
+          <div class="box__input">
+    <input class="box__file" type="file" name="files[]" id="file" data-multiple-caption="{count} files selected" multiple />
+    <label for="file"><strong>Choose a file</strong><span class="box__dragndrop"> or drag it here</span>.</label>
+  </div>
+  <div class="box__uploading">Uploading…</div>
+  <div class="box__success">Done!</div>
+  <div class="box__error">Error! <span></span>.</div>
 
-        <div class="Neon Neon-theme-dragdropbox">
-        <input style="z-index: 999; opacity: 0; width: 320px; height: 200px; position: absolute; right: 0px; left: 0px; margin-right: auto; margin-left: auto;" name="files[]" id="filer_input2" multiple="multiple" type="file">
-        <div class="Neon-input-dragDrop"><div class="Neon-input-inner"><div class="Neon-input-icon"><i class="fa fa-file-image-o"></i></div><div class="Neon-input-text"><h3>Drag&amp;Drop files here</h3> <span style="display:inline-block; margin: 15px 0">or</span></div><a class="Neon-input-choose-btn blue">Browse Files</a></div></div>
-        </div>
-          <div class="d-none" id="dropzoneTemplate">
-            <div class="dz-preview dz-file-preview">
-              <div class="dz-details">
-                <div class="dz-filename"><span data-dz-name=""></span></div>
-                <div class="dz-size" data-dz-size=""></div>
-              </div>
-              <div class="dz-progress"><span class="dz-upload" data-dz-uploadprogress=""></span></div>
-              <div class="dz-success-mark"><span class="dz-icon"><i class="fa-check fa"></i></span></div>
-              <div class="dz-error-mark"><span class="dz-icon"><i class="fa-times fa"></i></span></div>
-              <div class="dz-error-message"><span data-dz-errormessage=""></span></div>
-            </div>
-          </div>
+        
+
         </div>
       </div>
       <div class="row form-block">

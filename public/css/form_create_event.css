@@ -103,3 +103,14 @@
   -moz-transition: all 0.2s;
   transition: all 0.2s;
 }
+
+/* .label-date {
+  display: block;
+  font: 1rem 'Fira Sans', sans-serif;
+}
+
+.input-date,
+.label-date {
+  margin: .4rem 0;
+} */
+
