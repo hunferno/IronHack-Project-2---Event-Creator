@@ -37,23 +37,24 @@
 <div id="container-div">
     <div class="container" id="container">
         <div class="form-container sign-up-container">
-            <form action="" method="post" class="signin-form form">
-                <h1>Create Account</h1>
-                {{!-- <div class="social-container">
-                    <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
-                    <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
-                </div> --}}
-                <span>or use your email for registration</span>
-                <input type="text" placeholder="Name" />
-                <label for="email" class="identification-label">Email</label>
-                <input id="email" type="email" class="input-text" placeholder="hanane.azz@gmail.com" required
-                    value="hanane@azz.com" name="email">
-                <label for="password" class="identification-label">Password</label>
+            <form action="/signup" method="post" class="signin-form form">
 
-                <input id="password" type="password" class="input-text" placeholder="••••••" required value="123456"
+                <h1>Create Account</h1>
+                <span>or use your email for registration</span>
+
+                <label for="name" class="identification-label">Name</label>
+                <input id="name" type="text" placeholder="hanane" name="name">
+
+                <label for="email" class="identification-label">Email</label>
+                <input id="email" type="email" class="input-text" placeholder="hanane.azz@gmail.com" required value=""
+                    name="email">
+
+                <label for="password" class="identification-label">Password</label>
+                <input id="password" type="password" class="input-text" placeholder="••••••" required value=""
                     name="password">
-                <a href="/signup">Sign Up</a>
+
+                <button class="ghost" id="signUp">Sign Up</button>
+                {{!-- <a href="/signup">Sign Up</a> --}}
             </form>
         </div>
         <div class="overlay-container">

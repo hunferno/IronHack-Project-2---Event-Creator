@@ -4,11 +4,11 @@ const Schema = mongoose.Schema;
 const userSchema = new Schema(
   {
     name: String,
-    mail: String,
+    email: String,
     age: Number,
-    password : String,
-    description : String,
-    city : String,
+    password: String,
+    description: String,
+    city: String,
     image: {
       type: String,
       default:
@@ -17,9 +17,7 @@ const userSchema = new Schema(
     /*id_user: [{ type: Schema.Types.ObjectId, ref: "user" }],*/
   },
   { timestamps: true }
-    
 );
-    
 
 const userModel = mongoose.model("user", userSchema);
 
