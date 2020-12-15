@@ -9,6 +9,7 @@ router.get("/eventPage", (req, res) => {
   res.render("create_event");
 });
 
+
 // *************Feeding Carousel in Home Page***********
 router.get("/", async (req, res, next) => {
   try {
