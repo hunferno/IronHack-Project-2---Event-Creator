@@ -2,9 +2,25 @@ const express = require("express");
 const router = new express.Router();
 const EventModel = require("./../models/event");
 const UserModel = require("./../models/user");
+const protectPrivateRoute = require("./../middlewares/protectPrivateRoute");
 
-// *************SIGNUP RENDER PAGE***********
-router.get("/eventPage", (req, res) => {
+// router.use(protectPrivateRoute);
+
+// *************Render DASHBOARD page***********
+router.get("/dashboard", async (req, res, next) => {
+  try {
+    const allCreatedEvent = await EventModel.find().populate(id_user);
+    console.log("--------------->>>");
+    console.log(allCreatedEvent);
+    res.render("dashboard", { allCreatedEvent });
+  } catch (error) {
+    next(error);
+  }
+});
+// *************End***********
+
+// *************Render Create Event page***********
+router.get("/events_manage/create", (req, res) => {
   // console.log(req.session.currentUser._id);
   res.render("create_event");
 });
@@ -57,55 +73,53 @@ router.post("/events_manage/update/:id", async (req, res, next) => {
 });
 // *************End***********
 
-router.get("/dashboard", (req, res) => {
-  res.render("dashboard", {
-    events: [
-      {
-        image:
-          "https://res.cloudinary.com/dqwbskuge/image/upload/v1607960794/allef-vinicius-DmUbkltYsKI-unsplash_u0hy1a.jpg",
-        title: "test",
-        description:
-          "Render view with the given options and optional callback fn. When a callback function is given a response will not be made automatically, otherwise a response of 200 and text/html is given.Render view with the given options and optional callback fn. When a callback function is given a response will not be made automatically, otherwise a response of 200 and text/html is given.",
-      },
-      {
-        image:
-          "https://res.cloudinary.com/dqwbskuge/image/upload/v1607960794/allef-vinicius-DmUbkltYsKI-unsplash_u0hy1a.jpg",
-        title: "test",
-        description:
-          "Render view with the given options and optional callback fn. When a callback function is given a response will not be made automatically, otherwise a response of 200 and text/html is given.Render view with the given options and optional callback fn. When a callback function is given a response will not be made automatically, otherwise a response of 200 and text/html is given.",
-      },
-      {
-        image:
-          "https://res.cloudinary.com/dqwbskuge/image/upload/v1607960794/allef-vinicius-DmUbkltYsKI-unsplash_u0hy1a.jpg",
-        title: "test",
-        description:
-          "Render view with the given options and optional callback fn. When a callback function is given a response will not be made automatically, otherwise a response of 200 and text/html is given.Render view with the given options and optional callback fn. When a callback function is given a response will not be made automatically, otherwise a response of 200 and text/html is given.",
-      },
-    ],
-    myevents: [
-      {
-        image:
-          "https://res.cloudinary.com/dqwbskuge/image/upload/v1607960794/allef-vinicius-DmUbkltYsKI-unsplash_u0hy1a.jpg",
-        title: "lol",
-        description:
-          "the given options and optional callback fn. When a callback function is given a response will not be made automatically, otherwise a response of 200 and text/html is given.Render view with the given options and optional callback fn. When a callback function is given a response will not be made automatically, otherwise a response of 200 and text/html is given.",
-      },
-      {
-        image:
-          "https://res.cloudinary.com/dqwbskuge/image/upload/v1607960794/allef-vinicius-DmUbkltYsKI-unsplash_u0hy1a.jpg",
-        title: "test",
-        description:
-          "Render view with the given options and optional callback fn. When a callback function is given a response will not be made automatically, otherwise a response of 200 and text/html is given.Render view with the given options and optional callback fn. When a callback function is given a response will not be made automatically, otherwise a response of 200 and text/html is given.",
-      },
-      {
-        image:
-          "https://res.cloudinary.com/dqwbskuge/image/upload/v1607960794/allef-vinicius-DmUbkltYsKI-unsplash_u0hy1a.jpg",
-        title: "test",
-        description:
-          "Render view with the given options and optional callback fn. When a callback function is given a response will not be made automatically, otherwise a response of 200 and text/html is given.Render view with the given options and optional callback fn. When a callback function is given a response will not be made automatically, otherwise a response of 200 and text/html is given.",
-      },
-    ],
-  });
-});
+// res.render("dashboard", {
+//   events: [
+//     {
+//       image:
+//         "https://res.cloudinary.com/dqwbskuge/image/upload/v1607960794/allef-vinicius-DmUbkltYsKI-unsplash_u0hy1a.jpg",
+//       title: "test",
+//       description:
+//         "Render view with the given options and optional callback fn. When a callback function is given a response will not be made automatically, otherwise a response of 200 and text/html is given.Render view with the given options and optional callback fn. When a callback function is given a response will not be made automatically, otherwise a response of 200 and text/html is given.",
+//     },
+//     {
+//       image:
+//         "https://res.cloudinary.com/dqwbskuge/image/upload/v1607960794/allef-vinicius-DmUbkltYsKI-unsplash_u0hy1a.jpg",
+//       title: "test",
+//       description:
+//         "Render view with the given options and optional callback fn. When a callback function is given a response will not be made automatically, otherwise a response of 200 and text/html is given.Render view with the given options and optional callback fn. When a callback function is given a response will not be made automatically, otherwise a response of 200 and text/html is given.",
+//     },
+//     {
+//       image:
+//         "https://res.cloudinary.com/dqwbskuge/image/upload/v1607960794/allef-vinicius-DmUbkltYsKI-unsplash_u0hy1a.jpg",
+//       title: "test",
+//       description:
+//         "Render view with the given options and optional callback fn. When a callback function is given a response will not be made automatically, otherwise a response of 200 and text/html is given.Render view with the given options and optional callback fn. When a callback function is given a response will not be made automatically, otherwise a response of 200 and text/html is given.",
+//     },
+//   ],
+//   myevents: [
+//     {
+//       image:
+//         "https://res.cloudinary.com/dqwbskuge/image/upload/v1607960794/allef-vinicius-DmUbkltYsKI-unsplash_u0hy1a.jpg",
+//       title: "lol",
+//       description:
+//         "the given options and optional callback fn. When a callback function is given a response will not be made automatically, otherwise a response of 200 and text/html is given.Render view with the given options and optional callback fn. When a callback function is given a response will not be made automatically, otherwise a response of 200 and text/html is given.",
+//     },
+//     {
+//       image:
+//         "https://res.cloudinary.com/dqwbskuge/image/upload/v1607960794/allef-vinicius-DmUbkltYsKI-unsplash_u0hy1a.jpg",
+//       title: "test",
+//       description:
+//         "Render view with the given options and optional callback fn. When a callback function is given a response will not be made automatically, otherwise a response of 200 and text/html is given.Render view with the given options and optional callback fn. When a callback function is given a response will not be made automatically, otherwise a response of 200 and text/html is given.",
+//     },
+//     {
+//       image:
+//         "https://res.cloudinary.com/dqwbskuge/image/upload/v1607960794/allef-vinicius-DmUbkltYsKI-unsplash_u0hy1a.jpg",
+//       title: "test",
+//       description:
+//         "Render view with the given options and optional callback fn. When a callback function is given a response will not be made automatically, otherwise a response of 200 and text/html is given.Render view with the given options and optional callback fn. When a callback function is given a response will not be made automatically, otherwise a response of 200 and text/html is given.",
+//     },
+//   ],
+// });
 
 module.exports = router;
