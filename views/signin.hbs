@@ -1,5 +1,5 @@
 <div id="container-div">
-<div class="container" id="container">
+    <div class="container" id="container">
         {{!-- <div class="form-container sign-up-container">
             <form action="" method="post" class="signin-form form">
                 <h1>Create Account</h1>
@@ -21,7 +21,7 @@
             </form>
         </div> --}}
         <div class="form-container sign-in-container">
-            <form action="#">
+            <form action="/signin" method="post">
                 <h1>Sign in</h1>
                 {{!-- <div class="social-container">
                     <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
@@ -29,10 +29,10 @@
                     <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
                 </div> --}}
                 {{!-- <span>or use your account</span> --}}
-                <input type="email" placeholder="Email" />
-                <input type="password" placeholder="Password" />
-                <a href="#">Forgot your password?</a>
-                <button>Sign In</button>
+                <input type="email" placeholder="Email" name="email">
+                <input type="password" placeholder="Password" name="password">
+                {{!-- <a href=" #">Forgot your password?</a> --}}
+                <button id="signUp">Sign In</button>
             </form>
         </div>
         <div class="overlay-container">
@@ -45,9 +45,9 @@
                 <div class="overlay-panel overlay-right">
                     <h1>Hello, Friend!</h1>
                     <p class="p-signin">Enter your personal details and start journey with us</p>
-                    <button class="ghost" id="signUp">Sign Up</button>
+                    <button class="ghost" id="signIn">Sign Up</button>
                 </div>
             </div>
         </div>
-</div>
+    </div>
 </div>
