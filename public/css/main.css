@@ -2,6 +2,7 @@
 @import './signin.css';
 @import './footer.css';
 @import './form_create_event.css';
+@import './allEvents.css';
 
 * {
     margin: 0;
