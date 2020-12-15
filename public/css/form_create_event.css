@@ -1,7 +1,7 @@
 .container-page-event {
   border-style: solid;
   box-shadow: 12px 12px 2px 1px rgba(131, 10, 10, 0.2);
-  width: 110vh;
+  width: 115vh;
   flex-direction: column;
   display: flex;
   margin: auto;
@@ -14,6 +14,7 @@
   display: flex;
   flex-direction: column;
   text-align: none;
+  line-height: 30px;
 }
 
 
@@ -36,6 +37,7 @@
 
 .btn-publish {
   background-color: pink;
+  width: 18vh;
 }
 
 .Neon {
@@ -104,13 +106,4 @@
   transition: all 0.2s;
 }
 
-/* .label-date {
-  display: block;
-  font: 1rem 'Fira Sans', sans-serif;
-}
-
-.input-date,
-.label-date {
-  margin: .4rem 0;
-} */
 
