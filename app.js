@@ -61,24 +61,10 @@ app.use("/", require("./route/event"));
 // app.use("/", require("./route/dashboard_sneaker"));
 
 // Connect to the home page
-app.get("/", (req, res) => {
-  res.render("homepage");
-});
-
-//******Test area (To be deleted later)****/
-//Render home page
-// app.get("/", (req, res, next) => {
-//   res.render("index");
+// app.get("/", (req, res) => {
+//   res.render("homepage");
 // });
 
-// //Render signin page
-// app.get("/signin", (req, res, next) => {
-//   res.render("signin");
-// });
-
-// //Render signin page
-// app.get("/signup", (req, res, next) => {
-//   res.render("signup");
-// });
+//******Limit how carousel (To be deleted later)****/
 
 module.exports = app;
