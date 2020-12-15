@@ -63,7 +63,7 @@ button#signUp {
 	margin: 15px 0;
 }
 
-form {
+.form-signin {
 	background-color: #FFFFFF;
 	display: flex;
 	align-items: center;
