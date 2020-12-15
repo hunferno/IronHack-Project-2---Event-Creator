@@ -39,6 +39,7 @@ router.get("/signin", (req, res) => {
 
 // *************SIGNIN TRAITMENT***********
 router.post("/signin", async (req, res, next) => {
+  console.log(req.body);
   const { email, password } = req.body;
   const foundUser = await User.findOne({ email: email });
 
@@ -56,6 +57,7 @@ router.post("/signin", async (req, res, next) => {
       const userObject = foundUser.toObject();
       delete userObject.password;
       req.session.currentUser = userObject;
+
       req.flash("success", "Welcome back");
       res.redirect("/");
     }
