@@ -12,8 +12,12 @@
             <i class="fas fa-times sidenav__brand-close"></i>
         </div>
         <ul class="sidenav__list">
-            <li class="sidenav__list-item">Dashboard</li>
-            <li class="sidenav__list-item">My profile</li>
+            <a href="/dashboard">
+                <li class="sidenav__list-item">Dashboard</li>
+            </a>
+            <a href="/profile">
+                <li class="sidenav__list-item">My profile</li>
+            </a>
         </ul>
     </aside>
 
@@ -22,35 +26,34 @@
         <div id="container-my-event">
             <h1 class="h1-text">My events</h1>
             <div class="main-overview">
+
                 {{#each events}}
                 <div class="overviewcard">
                     <img class="img-dashboard" src={{this.image}}>
                     <div class="text-title-des">
-                    <p class="title-evt">{{this.title}}</p>
-                    <p>{{this.description}}</p>
+                        <p class="title-evt">{{this.title}}</p>
+                        <p>{{this.description}}</p>
                     </div>
-                              <div id="icon-events-manage">
+                    <div id="icon-events-manage">
                         <a href="#"><img width="30px" height="30px" src="/img/bin.png" alt=""></a>
                         <a href="#"><img width="30px" height="30px" src="/img/edit.png" alt=""></a>
                     </div>
                 </div>
-
                 {{/each}}
 
             </div>
         </div>
+
         <div id="container-my-event-participate">
             <h1 class="h1-text">My events auxquels je participe </h1>
 
-
-
             <div class="main-overview">
-               {{#each myevents}}
+                {{#each myevents}}
                 <div class="overviewcard">
                     <img class="img-dashboard" src={{this.image}}>
                     <div class="text-title-des">
-                    <p class="title-evt">{{this.title}}</p>
-                    <p>{{this.description}}</p>
+                        <p class="title-evt">{{this.title}}</p>
+                        <p>{{this.description}}</p>
                     </div>
                     <div id="icon-events-manage">
                         <a href="#"><img width="30px" height="30px" src="/img/bin.png" alt=""></a>
