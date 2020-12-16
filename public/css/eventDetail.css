@@ -82,8 +82,19 @@
   #image-event {
    display: flex;
     justify-content: center;
+    background-image: url(../img/background-img.jpg);
+    background-position: 80% 60%;
+    width: 80%;
+    height: 350px;
+    margin:auto;
+
 }
   #image-event img {
       height: 350px;
       width:500px;
+  }
+
+  .city-txt {
+    color:red;
+    text-align: center;
   }
