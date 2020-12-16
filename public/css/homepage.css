@@ -148,6 +148,26 @@ footer {
   margin: auto;
 }
 
+#slideshow .discoverBtn {
+  /* position: relative; */
+  margin-top: 270px;
+  display: flex;
+  text-align: center;
+}
+#slideshow .discoverBtn a{
+  background-color:  #7a2323;
+  padding: 15px 30px;
+  font-size: 20px;
+  border-radius: 30px;
+  color: whitesmoke;
+}
+
+#slideshow .discoverBtn a:hover{
+  background-color:  transparent;
+  border: 2px solid #7a2323;;
+  color:#7a2323;
+}
+
 .slideshow-title {
   font-family: "Allerta Stencil";
   font-size: 62px;
