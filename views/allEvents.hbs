@@ -1,73 +1,16 @@
 <ul class="products">
+    {{#each allEvents}}
     <li>
-        <a>
-            <div class="image" style=""></div>
-            <h1> Description event </h1>
+        <a href="/eventDetail/{{this._id}}">
+            <div class="image" style="">
+                {{!-- <img src={{this.image}} alt={{this.title}}> --}}
+            </div>
+            <h1> {{this.title}} </h1>
             <div class="informations">
-                <p> Date et lieu </p>
-                <buton>participe</buton>
+                {{!-- <p> Date et lieu </p> --}}
+                <buton>Seat Remaining : {{this.maxParticipant}}</buton>
             </div>
         </a>
     </li>
-    <li>
-        <a>
-            <div class="image" style=""></div>
-            <h1> Description event </h1>
-            <div class="informations">
-                <p>Date et lieu </p>
-                <buton>participe</buton>
-            </div>
-        </a>
-    </li>
-    <li>
-        <a>
-            <div class="image" style=""></div>
-            <h1>Description event</h1>
-            <div class="informations">
-                <p>Date et lieu </p>
-                <buton>participe</buton>
-            </div>
-        </a>
-    </li>
-    <li>
-        <a>
-            <div class="image" style=""></div>
-            <h1>Description event</h1>
-            <div class="informations">
-                <p>Date et lieu </p>
-               <buton>participe</buton>
-            </div>
-        </a>
-    </li>
-    <li>
-        <a>
-            <div class="image" style=""></div>
-            <h1>Description event</h1>
-            <div class="informations">
-                <p>Date et lieu</p>
-                <buton>participe</buton>
-            </div>
-        </a>
-    </li>
-    <li>
-        <a>
-            <div class="image" style=""></div>
-            <h1> Description event</h1>
-            <div class="informations">
-                <p>Date et lieu</p>
-                <buton>participe</buton>
-            </div>
-        </a>
-    </li>
-
-     <li>
-        <a>
-            <div class="image" style=""></div>
-            <h1> Description event</h1>
-            <div class="informations">
-                <p>Date et lieu</p>
-                <buton>participe</buton>
-            </div>
-        </a>
-    </li>
+    {{/each}}
 </ul>

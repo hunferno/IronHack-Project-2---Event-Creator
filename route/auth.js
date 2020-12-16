@@ -59,7 +59,7 @@ router.post("/signin", async (req, res, next) => {
       req.session.currentUser = userObject;
 
       req.flash("success", "Welcome back");
-      res.redirect("/");
+      res.redirect("/dashboard");
     }
   }
 });
