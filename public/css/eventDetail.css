@@ -1,0 +1,47 @@
+.products {
+    display:block;
+    width:100%;
+    height:100%;
+    position:relative;
+    margin:0px;
+    padding:0px;
+    font-size:0px;
+    list-style:none;
+}
+
+.products li {
+    display:inline-block;
+    width:200px;
+    height:237px;
+    position:relative;
+    margin:0px;
+    padding:0px;
+    z-index:1;
+}
+
+
+
+.products li a {
+    display:block;
+    width:180px;
+    height:auto;
+    padding:10px;
+    position:absolute;
+    background-color:white;
+    cursor:pointer;
+}
+}
+
+.products li a .image {
+    display:block;
+    height:150px;
+    width: 150px;
+    position:relative;
+    background-position:center center;
+    background-repeat:no-repeat;
+    background-size:contain;
+    background-color:rgb(167, 142, 142);
+}
+
+
+
