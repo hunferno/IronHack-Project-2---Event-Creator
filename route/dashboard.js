@@ -10,7 +10,7 @@ const protectPrivateRoute = require("./../middlewares/protectPrivateRoute");
 router.get("/dashboard", async (req, res, next) => {
   try {
     const id_user = res.locals.currentUser._id;
-    const allCreatedEvent = await EventModel.find().populate(id_user);
+    const allCreatedEvent = await EventModel.find({id_user : id_user}).populate(id_user);
     console.log("--------------->>>");
     console.log(allCreatedEvent);
     res.render("dashboard", { events : allCreatedEvent });
@@ -33,6 +33,7 @@ router.post("/events_manage/create", async (req, res, next) => {
     if (req.file) {
       req.body.image = req.file.path;
     }
+    req.body.id_user = res.locals.currentUser._id;
     console.log(req.body);
     await EventModel.create(req.body);
     res.redirect("/allEvents");
