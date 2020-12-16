@@ -39,7 +39,7 @@ router.get("/signin", (req, res) => {
 
 // *************SIGNIN TRAITMENT***********
 router.post("/signin", async (req, res, next) => {
-  console.log(req.body);
+  // console.log(req.body);
   const { email, password } = req.body;
   const foundUser = await User.findOne({ email: email });
 
