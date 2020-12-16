@@ -2,6 +2,7 @@ const express = require("express");
 const router = new express.Router();
 const EventModel = require("./../models/event");
 const UserModel = require("./../models/user");
+const uploader = require("../config/cloudinary");
 const protectPrivateRoute = require("./../middlewares/protectPrivateRoute");
 
 router.use(protectPrivateRoute);
@@ -30,27 +31,30 @@ router.get("/events_manage/create", (req, res) => {
 // *************End***********
 
 // *************Create Event***********
-router.post("/events_manage/create", async (req, res, next) => {
-  try {
-    if (req.file) {
-      req.body.image = req.file.path;
+router.post(
+  "/events_manage/create",
+  uploader.single("image"),
+  async (req, res, next) => {
+    try {
+      if (req.file) {
+        req.body.image = req.file.path;
+      }
+      req.body.id_user = res.locals.currentUser._id;
+      await EventModel.create(req.body);
+      res.redirect("/dashboard");
+    } catch (error) {
+      console.log(error);
+      next(error);
     }
-    req.body.id_user = res.locals.currentUser._id;
-    console.log(req.body);
-    await EventModel.create(req.body);
-    res.redirect("/allEvents");
-  } catch (error) {
-    console.log(error);
-    next(error);
   }
-});
+);
 // *************End***********
 
 // *************Delete Event***********
 router.get("/events_manage/delete/:id", async (req, res, next) => {
   try {
     await EventModel.findByIdAndRemove(req.params.id);
-    res.redirect("/allEvents");
+    res.redirect("/dashboard");
   } catch (error) {
     next(error);
   }
@@ -61,7 +65,8 @@ router.get("/events_manage/delete/:id", async (req, res, next) => {
 router.get("/events_manage/update/:id", async (req, res, next) => {
   try {
     const updateEvent = await EventModel.findById(req.params.id);
-    res.render("", updateEvent);
+    updateEvent.public = updateEvent.eventType === "public";
+    res.render("update_event", updateEvent);
   } catch (error) {
     next(error);
   }
@@ -71,8 +76,8 @@ router.get("/events_manage/update/:id", async (req, res, next) => {
 // *************Update Event***********
 router.post("/events_manage/update/:id", async (req, res, next) => {
   try {
-    await EventModel.findById(req.params.id, req.body);
-    res.redirect("/allEvents");
+    await EventModel.findByIdAndUpdate(req.params.id, req.body);
+    res.redirect("/dashboard");
   } catch (error) {
     next(error);
   }
@@ -129,3 +134,9 @@ router.post("/events_manage/update/:id", async (req, res, next) => {
 // });
 
 module.exports = router;
+
+// {{#if condition1}}
+// {{else}}
+//   {{#if condition2}}
+//   {{else}}
+//      {{#if condition3}}

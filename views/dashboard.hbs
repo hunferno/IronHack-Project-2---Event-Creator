@@ -35,8 +35,10 @@
                         <p>{{this.description}}</p>
                     </div>
                     <div id="icon-events-manage">
-                        <a href="#"><img width="30px" height="30px" src="/img/bin.png" alt=""></a>
-                        <a href="#"><img width="30px" height="30px" src="/img/edit.png" alt=""></a>
+                        <a href="/events_manage/delete/{{this._id}}"><img width="30px" height="30px" src="/img/bin.png"
+                                alt=""></a>
+                        <a href="/events_manage/update/{{this._id}}"><img width="30px" height="30px" src="/img/edit.png"
+                                alt=""></a>
                     </div>
                 </div>
                 {{/each}}
