@@ -4,16 +4,18 @@ const EventModel = require("./../models/event");
 const UserModel = require("./../models/user");
 const protectPrivateRoute = require("./../middlewares/protectPrivateRoute");
 
-// router.use(protectPrivateRoute);
+router.use(protectPrivateRoute);
 
 // *************Render DASHBOARD page***********
 router.get("/dashboard", async (req, res, next) => {
   try {
     const id_user = res.locals.currentUser._id;
-    const allCreatedEvent = await EventModel.find({id_user : id_user}).populate(id_user);
-    console.log("--------------->>>");
-    console.log(allCreatedEvent);
-    res.render("dashboard", { events : allCreatedEvent });
+    // console.log("--------------->>>");
+    // console.log(id_user);
+    const allCreatedEvent = await EventModel.find({
+      id_user: id_user,
+    }).populate(id_user);
+    res.render("dashboard", { events: allCreatedEvent });
   } catch (error) {
     next(error);
   }
