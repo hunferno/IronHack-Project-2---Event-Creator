@@ -1,3 +1,36 @@
+.classAll {
+    background: url("https://res.cloudinary.com/dx7ahhk3r/image/upload/v1608129421/samantha-gades-fIHozNWfcvs-unsplash_qja4nd.jpg")
+      no-repeat center -100px;
+    background-size: cover;
+    background-position: 0 0;
+    position: fixed;
+    min-height: 500px;
+    margin-bottom: 30px;
+  }
+  
+  .classAll {
+    text-align: center;
+    color: white;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+  }
+  
+  .classAll h1 {
+    font-size: 105px;
+    line-height: 80px;
+    color: #2d3035;
+  }
+  
+  .classAll p {
+    font-size: 40px;
+    color: #7a2323;
+  }
+
+
+
 .products {
     display:block;
     width:100%;
@@ -83,3 +116,21 @@ width: 100%;
 .products li:hover a .informations {
     display:block;
 }
+
+#mainEvent {
+    width: 100%;
+    margin : auto; 
+    padding-left: 50px;
+   
+
+    
+}
+
+#mainEvent * {
+    
+    flex-wrap: wrap;
+    /* justify-content: center; */
+    display : flex;
+    
+}
+
