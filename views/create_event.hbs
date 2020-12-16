@@ -7,7 +7,7 @@
       <div class="">
         <div class="">
           <label class="form-label" for="form_name">Name of event</label>
-          <input class="form-control" name="title" id="form_name">
+          <input class="form-control" name="title" id="form_name" required>
         </div>
 
         <div class="form-group">
@@ -39,24 +39,24 @@
         <div id="start-date">
           <label class="label-date" for="start">Start date:</label>
           <input class="input-date" type="date" id="start" name="dateStart" value="{{dateStart}}" min="2018-01-01"
-            max="2021-12-31">
+            max="2021-12-31" required>
         </div>
 
         <div id="end-date">
           <label class="label-date" for="start">End date:</label>
           <input class="input-date" type="date" id="end" name="dateEnd" value="{{dateEnd}}" min="2018-01-01"
-            max="2021-12-31">
+            max="2021-12-31" required>
         </div>
       </div>
 
       <div id="time-form">
         <div>
           <label for="appt">start time meeting:</label>
-          <input type="time" id="appt" name="startTime" min="09:00" max="18:00" required>
+          <input type="time" id="appt" name="startTime" min="00:00" max="23:59" required>
         </div>
         <div>
           <label for="appt">end time meeting:</label>
-          <input type="time" id="appt" name="endTime" min="09:00" max="18:00" required>
+          <input type="time" id="appt" name="endTime" min="00:00" max="23:59" required>
         </div>
       </div>
 
@@ -70,8 +70,7 @@
             <div class="">
             </div>
             <label for="tentacles">Number of participants:</label>
-
-            <input type="number" id="tentacles" name="maxParticipant" min="0" max="100000">
+            <input type="number" id="tentacles" name="maxParticipant" min="0" max="100000" required>
           </div>
         </div>
 
@@ -82,7 +81,7 @@
               possible</p>
           </div>
           <div class="box__input">
-            <input class="box__file" type="file" name="image" id="file">
+            <input class="box__file" type="file" name="image" id="file" required>
             {{!-- data-multiple-caption="{count} files selected" multiple --}}
           </div>
 
@@ -90,38 +89,30 @@
         <div class="row form-block">
           <div class="col-lg-4">
             <h4>Address</h4>
-            <p class="text-muted text-sm">The essential address for your event. The one that your
-              participant (s) will
-              go to. This is where your event will begin.</p>
+            <p class="text-muted text-sm">The essential address for your event. This is where your event will begin.</p>
           </div>
 
           <div class="col-lg-7 ml-auto">
             <!-- Street-->
             <div class="form-group">
               <label class="form-label" for="form_street">Street</label>
-              <input class="form-control" name="location.adress" id="form_street">
+              <input class="form-control" name="location.adress" id="form_street" required>
             </div>
             <!-- City + State-->
             <div class="row">
               <div class="col-md-6">
                 <div class="form-group">
                   <label class="form-label" for="form_city">City</label>
-                  <input class="form-control" name="location.city" id="form_city">
+                  <input class="form-control" name="location.city" id="form_city" required>
                 </div>
               </div>
-              {{!-- <div class="col-md-6">
-                <div class="form-group">
-                  <label class="form-label" for="form_state">Region</label>
-                  <input class="form-control" name="location.region" id="form_state">
-                </div>
-              </div> --}}
             </div>
 
             <div class="row">
               <div class="col-md-6">
                 <div class="form-group">
                   <label class="form-label" for="form_zip">Zip code</label>
-                  <input class="form-control" name="location.zipCode" id="form_zip">
+                  <input class="form-control" name="location.zipCode" id="form_zip" required>
                 </div>
               </div>
             </div>
