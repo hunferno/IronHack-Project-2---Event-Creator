@@ -56,6 +56,10 @@
       padding-left: 90px;
   }
 
+  #informationEvent p{
+    font-size: 10px;
+}
+
   #informationEvent div{
 flex-direction: row;
 margin: 20px;
@@ -81,7 +85,6 @@ margin: 20px;
 #descriptionDetails {
   width: 50%;
   margin:50px;
-  background-color: white;
 }
 
 .des-2 {
