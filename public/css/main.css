@@ -4,6 +4,7 @@
 @import './form_create_event.css';
 @import './allEvents.css';
 @import './dashboard.css';
+@import './eventDetail.css';
 
 * {
     margin: 0;
