@@ -33,9 +33,11 @@ router.post("/events_manage/create", async (req, res, next) => {
     if (req.file) {
       req.body.image = req.file.path;
     }
+    console.log(req.body);
     await EventModel.create(req.body);
-    res.redirect("/allEvent");
+    res.redirect("/allEvents");
   } catch (error) {
+    console.log(error);
     next(error);
   }
 });
@@ -45,7 +47,7 @@ router.post("/events_manage/create", async (req, res, next) => {
 router.get("/events_manage/delete/:id", async (req, res, next) => {
   try {
     await EventModel.findByIdAndRemove(req.params.id);
-    res.redirect("/allEvent");
+    res.redirect("/allEvents");
   } catch (error) {
     next(error);
   }
@@ -67,7 +69,7 @@ router.get("/events_manage/update/:id", async (req, res, next) => {
 router.post("/events_manage/update/:id", async (req, res, next) => {
   try {
     await EventModel.findById(req.params.id, req.body);
-    res.redirect("/allEvent");
+    res.redirect("/allEvents");
   } catch (error) {
     next(error);
   }
