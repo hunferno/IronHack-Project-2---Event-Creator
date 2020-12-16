@@ -31,16 +31,6 @@ router.get("/dashboard/:id", async (req, res, next) => {
   try {
     const allParticipatedEvent = await EventModel.findById(req.params.id);
     res.render("dashboard", { hisEvents: allParticipatedEvent });
-
-    // const id_user = res.locals.currentUser._id;
-    // console.log("--------------->>>");
-    // console.log(id_user);
-    // const allCreatedEvent = await EventModel.find().populate("id_user");
-    // const allParticipatedEvent = await EventModel.find({
-    //   id_user: id_user,
-    // });
-    // console.log(allCreatedEvent);
-    // .populate(id_user)
   } catch (error) {
     next(error);
   }
