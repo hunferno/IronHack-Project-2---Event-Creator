@@ -7,7 +7,7 @@ const protectPrivateRoute = require("./../middlewares/protectPrivateRoute");
 
 router.use(protectPrivateRoute);
 
-// *************Render DASHBOARD page***********
+// *************Render DASHBOARD My event page***********
 router.get("/dashboard", async (req, res, next) => {
   try {
     const id_user = res.locals.currentUser._id;
@@ -19,7 +19,28 @@ router.get("/dashboard", async (req, res, next) => {
     });
     console.log(allCreatedEvent);
     // .populate(id_user)
-    res.render("dashboard", { events: allCreatedEvent });
+    res.render("dashboard", { myEvents: allCreatedEvent });
+  } catch (error) {
+    next(error);
+  }
+});
+// *************End***********
+
+// *************Render DASHBOARD His event page***********
+router.get("/dashboard/:id", async (req, res, next) => {
+  try {
+    const allParticipatedEvent = await EventModel.findById(req.params.id);
+    res.render("dashboard", { hisEvents: allParticipatedEvent });
+
+    // const id_user = res.locals.currentUser._id;
+    // console.log("--------------->>>");
+    // console.log(id_user);
+    // const allCreatedEvent = await EventModel.find().populate("id_user");
+    // const allParticipatedEvent = await EventModel.find({
+    //   id_user: id_user,
+    // });
+    // console.log(allCreatedEvent);
+    // .populate(id_user)
   } catch (error) {
     next(error);
   }
