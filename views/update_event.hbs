@@ -1,7 +1,7 @@
 <section class="py-5">
     <div class="container-page-event">
         <h1 class="h2 mb-5">Update your event </h1>
-        <form id="form-page-event" action="/events_manage/update/{{_id}}" method="post">
+        <form id="form-page-event" action="/events_manage/update/{{_id}}" method="post" enctype="multipart/form-data">
             {{!-- enctype="multipart/form-data" --}}
             {{!-- <h4>Event name</h4> --}}
             <p class="text-muted text-sm">Indicate the title of your event</p>
@@ -44,12 +44,12 @@
             <div id="time-form">
                 <div>
                     <label for="appt">start time meeting:</label>
-                    <input type="time" id="appt" name="startTime" min="09:00" max="18:00" value="{{startTime}}"
+                    <input type="time" id="appt" name="startTime" min="00:00" max="23:59" value="{{startTime}}"
                         required>
                 </div>
                 <div>
                     <label for="appt">end time meeting:</label>
-                    <input type="time" id="appt" name="endTime" min="09:00" max="18:00" value="{{endTime}}" required>
+                    <input type="time" id="appt" name="endTime" min="00:00" max="23:59" value="{{endTime}}" required>
                 </div>
             </div>
 
