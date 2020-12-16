@@ -27,7 +27,7 @@
             <h1 class="h1-text">My events</h1>
             <div class="main-overview">
 
-                {{#each events}}
+                {{#each myEvents}}
                 <div class="overviewcard">
                     <img class="img-dashboard" src={{this.image}}>
                     <div class="text-title-des">
@@ -46,11 +46,12 @@
             </div>
         </div>
 
+
+        {{!-- Events auquels je participe --}}
         <div id="container-my-event-participate">
             <h1 class="h1-text">My events auxquels je participe </h1>
-
             <div class="main-overview">
-                {{#each myevents}}
+                {{#each hisEvents}}
                 <div class="overviewcard">
                     <img class="img-dashboard" src={{this.image}}>
                     <div class="text-title-des">
@@ -58,7 +59,8 @@
                         <p>{{this.description}}</p>
                     </div>
                     <div id="icon-events-manage">
-                        <a href="#"><img width="30px" height="30px" src="/img/bin.png" alt=""></a>
+                        <a href="/events_manage/delete/{{this._id}}"><img width="30px" height="30px" src="/img/bin.png"
+                                alt=""></a>
                     </div>
                 </div>
 

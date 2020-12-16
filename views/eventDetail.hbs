@@ -1,68 +1,54 @@
 <header class="imageAll">
     <div class="header-event-details">
-        <h1>Centre Tao</h1>
-        <p>Paris</p>
+        <h1>{{title}}</h1>
+        <p>{{location.city}}</p>
     </div>
 </header>
 
 <main id="main-eventDetail">
     <section id="image-event">
-        <img src="https://res.cloudinary.com/dx7ahhk3r/image/upload/v1608129421/samantha-gades-fIHozNWfcvs-unsplash_qja4nd.jpg"
-            alt="">
+        <img src="{{image}}" alt="">
     </section>
     <section id="section1">
         <div>
-            <h1>Centre Tao Paris</h1>
-            <p class="city-txt">City</p>
+            <h1>{{title}}</h1>
+            <p class="city-txt">{{location.city}}</p>
         </div>
 
         <div id="informationEvent">
             <div class="test">
-                <img src="/public/img/calendar.png"/>
-            <p>Date debut</p>
-            <p>Date fin</p>
+                <img src="/public/img/calendar.png" />
+                <p>Date debut : {{dateStart}}</p>
+                <p>Date fin : {{dateEnd}}</p>
             </div>
-          <div class="test">
-              <img src="/public/img/clock.png">
-            <p>heure debut</p>
-            <p>heure fin</p>
-          </div>
-           <div class="test">
-                 <img src="/public/img/pin.png">
-            <p>adresse</p>
-           </div>
+            <div class="test">
+                <img src="/public/img/clock.png">
+                <p>heure debut : {{startTime}}</p>
+                <p>heure fin : {{endTime}}</p>
+            </div>
+            <div class="test">
+                <img src="/public/img/pin.png">
+                <p>adresse : {{location.adress}} - {{location.zipCode}} - {{location.city}} </p>
+            </div>
         </div>
 
     </section>
     <section id="descriptionEvent">
         <div id="descriptionDetails">
             <p class="des-1">Details</p>
-            <p class="des-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo quasi vel quidem eos dolorem,
-                officiis provident corrupti, excepturi nam cupiditate esse totam deleniti voluptatum cum amet adipisci
-                earum similique minus.Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo quasi vel quidem eos dolorem,
-                officiis provident corrupti, excepturi nam cupiditate esse totam deleniti voluptatum cum amet adipisci
-                pturi nam cupiditate esse totam deleniti voluptatum cum amet adipisci
-                earum similique minus.Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo quasi vel quidem eos dolorem,
-                officiis provident corrupti, excepturi nam cupiditate esse totam deleniti voluptatum cum amet adipisci
-                earum similique minus.Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo quasi vel quidem eos dolorem,
-                officiis provident corrupti,excepturi nam cupiditate esse totam deleniti voluptatum cum amet adipisci
-                earum similique minus.Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo quasi vel quidem eos dolorem,
-                officiis provident corrupti, excepturi nam cupiditate esse totam deleniti voluptatum cum amet adipisci
-                earum similique minus.Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo quasi vel quidem eos dolorem,
-                officiis provident corrupti, excepturi nam cupiditate esse totam deleniti voluptatum cum amet adipisci
-                earum similique minus.Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo quasi vel quidem eos dolorem,
-                officiis provident corrupti, excepturi nam cupiditate esse totam deleniti voluptatum cum amet adipisci
-                earum similique minus.</p>
+            <p class="des-2">{{description}}</p>
         </div>
         <div id="container-button">
-        <div class="button-participate-event">
-            <a class="button-participate" href="#">Participate</a>
+            <div class="button-participate-event">
+                <a class="button-participate" href="/dashboard/{{_id}}">Participate</a>
             </div>
-            <div class="button-sign-signout"></div>
-            <a class="sign-event" href="#">Signin</a>
-            <a class="sign-event" href="#">Signout</a>
+            {{#unless isLoggedIn}}
+            <div class="button-sign-signout">
+                <a class="sign-event" href="/signin">Signin</a>
+                <a class="sign-event" href="/signup">Signup</a>
+            </div>
+            {{/unless}}
         </div>
         </div>
     </section>
 </main>
-
