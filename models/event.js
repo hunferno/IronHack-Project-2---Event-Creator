@@ -9,6 +9,7 @@ const EventsSchema = new Schema(
       zipCode: String,
       city: String,
       country: String,
+      region: String,
     },
     description: String,
     maxParticipant: Number,

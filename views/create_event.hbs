@@ -1,20 +1,20 @@
 <section class="py-5">
   <div class="container-page-event">
     <h1 class="h2 mb-5">Create your event </h1>
-    <form id="form-page-event">
+    <form id="form-page-event" action="/events_manage/create" method="post">
           <h4>Event name</h4>
           <p class="text-muted text-sm">Indicate the title of your event</p>
         <div class="">
           <div class="">
             <label class="form-label" for="form_name">Name of event</label>
-            <input class="form-control" name="name" id="form_name">
+            <input class="form-control" name="title" id="form_name">
           </div>
           <div class="form-group">
             <label class="form-label" for="form_type">Type of event</label>
-            <select class="selectpicker form-control" name="type" id="form_type" data-style="btn-selectpicker" title=""
+            <select class="selectpicker form-control" name="eventType" id="form_type" data-style="btn-selectpicker" title=""
               aria-describedby="propertyTypeHelp">
-              <option value="type_0">Public</option>
-              <option value="type_1">Private</option>
+              <option value="public">Public</option>
+              <option value="private">Private</option>
             </select>
           </div>
           <div class="form-group">
@@ -33,7 +33,7 @@
         <div class="col-lg-7 ml-auto">
           <div class="form-group mb-5">
             <label class="form-label" for="form_description"></label>
-            <textarea class="form-control" name="name" id="form_description" rows="5"
+            <textarea class="form-control" name="description" id="form_description" rows="5"
               aria-describedby="descriptionHelp"></textarea><small class="form-text text-muted mt-2"
               id="descriptionHelp"></small>
           </div>
@@ -43,13 +43,13 @@
 <div id="form-date">
 <div id="start-date">
 <label class="label-date" for="start">Start date:</label>
-<input class="input-date" type="date" id="start" name="trip-start"
+<input class="input-date" type="date" id="start" name="dateStart"
        value="2018-07-22"
        min="2018-01-01" max="2018-12-31">
 </div>
 <div id="end-date">
 <label class="label-date" for="start">End date:</label>
-<input class="input-date" type="date" id="end" name="trip-end"
+<input class="input-date" type="date" id="end" name="dateEnd"
        value="2018-07-22"
        min="2018-01-01" max="2018-12-31">
 </div>
@@ -83,7 +83,7 @@
             </div>
  <label for="tentacles">Number of participants:</label>
 
-<input type="number" id="tentacles" name="tentacles"
+<input type="number" id="tentacles" name="maxParticipant"
        min="0" max="100000">
         </div>
       </div>
@@ -112,20 +112,20 @@
           <!-- Street-->
           <div class="form-group">
             <label class="form-label" for="form_street">Street</label>
-            <input class="form-control" name="name" id="form_street">
+            <input class="form-control" name="location.adress" id="form_street">
           </div>
           <!-- City + State-->
           <div class="row">
             <div class="col-md-6">
               <div class="form-group">
                 <label class="form-label" for="form_city">City</label>
-                <input class="form-control" name="name" id="form_city">
+                <input class="form-control" name="location.city" id="form_city">
               </div>
             </div>
             <div class="col-md-6">
               <div class="form-group">
                 <label class="form-label" for="form_state">Region</label>
-                <input class="form-control" name="name" id="form_state">
+                <input class="form-control" name="location.region" id="form_state">
               </div>
             </div>
           </div>
@@ -133,13 +133,13 @@
             <div class="col-md-6">
               <div class="form-group">
                 <label class="form-label" for="form_zip">Zip code</label>
-                <input class="form-control" name="name" id="form_zip">
+                <input class="form-control" name="location.zipCode" id="form_zip">
               </div>
             </div>
           </div>
           <div class="form-group">
             <label class="form-label" for="form_country">Country</label>
-            <select class="selectpicker form-control" name="country" id="form_country" data-style="btn-selectpicker"
+            <select class="selectpicker form-control" name="location.country" id="form_country" data-style="btn-selectpicker"
               title=" " data-live-search="true">
               <option value="country_#{index}">Afghanistan </option>
               <option value="country_#{index}">Albania </option>
