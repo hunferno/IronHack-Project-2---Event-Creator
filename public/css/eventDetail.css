@@ -53,8 +53,18 @@
   #informationEvent {
       display: flex;
       margin-top: 30px;
-      padding-left: 90px;
+      justify-content: space-around;
   }
+
+  #informationEvent div {
+    text-align: center;
+}
+
+  #informationEvent img{
+    width: 20px;
+    height:20px;
+    justify-content: center;
+}
 
   #informationEvent p{
     font-size: 10px;
