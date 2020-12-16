@@ -43,13 +43,15 @@
 
 .products li a .image {
     display:block;
-    height:150px;
+    /*height:150px;*/
     width: 150px;
     position:relative;
-    background-position:center center;
-    background-repeat:no-repeat;
-    background-size:contain;
-    background-color:rgb(167, 142, 142);
+    /*background-image: url("../img/desert.jpg");*/
+}
+
+.products li a .image img {
+width: 100%;
+
 }
 
 .products li a h1 {
