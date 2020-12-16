@@ -27,4 +27,4 @@ router.get("/eventDetail/:id", async (req, res, next) => {
 
 module.exports = router;
 
-// const ev.find().populate("id_user")
+// const ev.find().populate("user", "name, age(ce que l'on veut) -_id(on ne garde pas l'id)")
