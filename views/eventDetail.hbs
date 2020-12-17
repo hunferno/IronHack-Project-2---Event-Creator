@@ -41,9 +41,19 @@
             <p class="des-2">{{description}}</p>
         </div>
         <div id="container-button">
+            {{#if full}}
+            <p>Full</p>
+            {{else}}
+            {{#if participate}}
             <div class="button-participate-event">
-                <a class="button-participate" href="/dashboard/{{_id}}">Participate</a>
+                <a class="button-participate" href="/event/{{_id}}/quit">Quit Event</a>
             </div>
+            {{else}}
+            <div class="button-participate-event">
+                <a class="button-participate" href="/event/{{_id}}/participate">Participate</a>
+            </div>
+            {{/if}}
+            {{/if}}
             {{#unless isLoggedIn}}
             <div class="button-sign-signout">
                 <a class="sign-event" href="/signin">Signin</a>

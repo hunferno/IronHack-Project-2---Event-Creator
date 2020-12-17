@@ -22,6 +22,7 @@ const EventsSchema = new Schema(
         "https://res.cloudinary.com/dke1st5wz/image/upload/v1607328768/sample.jpg",
     },
     eventType: String,
+    participant_ids: [{type: Schema.Types.ObjectId, ref: "user" }],
     id_user: { type: Schema.Types.ObjectId, ref: "user" },
     // id_user: [{ type: Schema.Types.ObjectId, ref: "user" }],
   },
