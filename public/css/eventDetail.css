@@ -132,6 +132,22 @@ margin: 20px;
     text-align: center;
 }
 
+#container-button  .text-participate {
+    /* width: 200px; */
+    line-height: 20px;
+    margin-bottom: 20px;
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+#container-button  .localisation {
+    /* width: 200px; */
+    margin-top: 20px;
+    padding: 20px;
+    text-align: center;
+}
+
 .button-participate {
     color: white;
 }

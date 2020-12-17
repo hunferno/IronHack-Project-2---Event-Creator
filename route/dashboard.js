@@ -16,8 +16,14 @@ router.get("/dashboard", async (req, res, next) => {
       id_user: id_user,
     });
     console.log(allCreatedEvent);
+    const participateEvents = await EventModel.find({
+      participant_ids: id_user,
+    });
     // .populate(id_user)
-    res.render("dashboard", { myEvents: allCreatedEvent });
+    res.render("dashboard", {
+      myEvents: allCreatedEvent,
+      hisEvents: participateEvents,
+    });
   } catch (error) {
     next(error);
   }
