@@ -19,13 +19,12 @@
                 <li class="sidenav__list-item">My profile</li>
             </a>
             <a href="/allEvents">
-                <li class="sidenav__list-item">Access All event</li>
+                <li class="sidenav__list-item">Access All events</li>
             </a>
         </ul>
     </aside>
 
     <main class="main">
-
         <div id="container-my-event">
             <h1 class="h1-text">My events</h1>
             <div class="main-overview">
@@ -56,17 +55,16 @@
             <div class="main-overview">
                 {{#each hisEvents}}
                 <div class="overviewcard">
-                    <img class="img-dashboard" src={{this.image}}>
+                    <img class="img-dashboard" src={{image}}>
                     <div class="text-title-des">
-                        <p class="title-evt">{{this.title}}</p>
-                        <p>{{this.description}}</p>
+                        <p class="title-evt">{{title}}</p>
+                        <p>{{description}}</p>
                     </div>
                     <div id="icon-events-manage">
-                        <a href="/events_manage/delete/{{this._id}}"><img width="30px" height="30px" src="/img/bin.png"
+                        <a href="/events_manage/delete/{{_id}}"><img width="30px" height="30px" src="/img/bin.png"
                                 alt=""></a>
                     </div>
                 </div>
-
                 {{/each}}
             </div>
         </div>

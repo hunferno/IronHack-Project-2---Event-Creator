@@ -18,9 +18,9 @@ body {
     height: 100vh;
   }
   
-  .menu-icon {
+  /* .menu-icon {
     position: fixed; /* Needs to stay visible for all mobile scrolling */
-    display: flex;
+    /* display: flex;
     top: 5px;
     left: 10px;
     align-items: center;
@@ -30,7 +30,7 @@ body {
     z-index: 1;
     cursor: pointer;
     padding: 12px;
-  }
+  } */ 
   
   /* Give every child element its grid name */
   .header {

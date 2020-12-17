@@ -11,8 +11,6 @@ router.use(protectPrivateRoute);
 router.get("/dashboard", async (req, res, next) => {
   try {
     const id_user = res.locals.currentUser._id;
-    // console.log("--------------->>>");
-    // console.log(id_user);
     // const allCreatedEvent = await EventModel.find().populate("id_user");
     const allCreatedEvent = await EventModel.find({
       id_user: id_user,
@@ -33,21 +31,26 @@ router.get("/dashboard", async (req, res, next) => {
 router.get("/dashboard/:id", async (req, res, next) => {
   try {
     const allParticipatedEvent = await EventModel.findById(req.params.id);
-    res.render("dashboard", { hisEvents: allParticipatedEvent });
-
-    // const id_user = res.locals.currentUser._id;
-    // console.log("--------------->>>");
-    // console.log(id_user);
-    // const allCreatedEvent = await EventModel.find().populate("id_user");
-    // const allParticipatedEvent = await EventModel.find({
-    //   id_user: id_user,
-    // });
-    // console.log(allCreatedEvent);
-    // .populate(id_user)
+    console.log("------------------>");
+    console.log(allParticipatedEvent);
+    res.render("dashboard", allParticipatedEvent);
   } catch (error) {
     next(error);
   }
 });
+// *************End***********
+
+// *************Render DASHBOARD His event page***********
+// router.post("/dashboard/:id", async (req, res, next) => {
+//   try {
+//     const allParticipatedEvent = await EventModel.findById(req.params.id);
+//     console.log("------------------>");
+//     console.log(allParticipatedEvent);
+//     res.render("dashboard", allParticipatedEvent);
+//   } catch (error) {
+//     next(error);
+//   }
+// });
 // *************End***********
 
 // *************Render Create Event page***********
