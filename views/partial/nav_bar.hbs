@@ -11,12 +11,12 @@
     <ul>
       {{#unless isLoggedIn}}
       <img src="/img/user.png" alt="">
-      <li><a href="/signin">Sign In </a></li>
-      <li><a href="/signup">Sign Up</a></li>
+      <li><a class="border-nav" href="/signin">Sign In </a></li>
+      <li><a class="border-nav" href="/signup">Sign Up</a></li>
       {{/unless}}
       {{#if isLoggedIn}}
-      <li><a href="/dashboard">Dashboard</a></li>
-     <li><a href="/signout">Signout</a></li>
+      <li><a class="border-nav" href="/dashboard">Dashboard</a></li>
+     <li><a class="border-nav" href="/signout">Signout</a></li>
       {{/if}}
     </ul>
   </div>

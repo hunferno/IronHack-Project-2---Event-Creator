@@ -6,6 +6,7 @@
     position: fixed;
     min-height: 500px;
     margin-bottom: 30px;
+    margin-top: 110px;
   }
   
   .classAll {
@@ -21,13 +22,13 @@
   .classAll h1 {
     font-size: 105px;
     line-height: 80px;
-    color: #2d3035;
+    color: #f6d938;
   }
   
-  .classAll p {
+  /* .classAll p {
     font-size: 40px;
-    color: #7a2323;
-  }
+    color: #fafafa;
+  } */
 
 
 
@@ -72,6 +73,7 @@
     -webkit-box-shadow:0px 0px 5px rgba(0,0,0,0.5);
     -o-box-shadow:0px 0px 5px rgba(0,0,0,0.5);
     -ms-box-shadow:0px 0px 5px rgba(0,0,0,0.5);
+    border: solid #f6d938;
 }
 
 .products li a .image {

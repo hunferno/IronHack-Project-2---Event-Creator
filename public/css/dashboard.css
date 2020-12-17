@@ -16,21 +16,7 @@ body {
       'main'
       'footer';
     height: 100vh;
-  }
-  
-  /* .menu-icon {
-    position: fixed; /* Needs to stay visible for all mobile scrolling */
-    /* display: flex;
-    top: 5px;
-    left: 10px;
-    align-items: center;
-    justify-content: center;
-    background-color: #DADAE3;
-    border-radius: 50%;
-    z-index: 1;
-    cursor: pointer;
-    padding: 12px;
-  } */ 
+  } 
   
   /* Give every child element its grid name */
   .header {
@@ -40,6 +26,7 @@ body {
     justify-content: space-between;
     padding: 0 16px;
     background-color: #0e1920;
+    margin-top: 140px;
   }
   
   /* Make room for the menu icon on mobile */
@@ -58,8 +45,9 @@ body {
     transform: translateX(-245px);
     transition: all .6s ease-in-out;
     box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.16), 0 0 0 1px rgba(0, 0, 0, 0.08);
-    z-index: 2; /* Needs to sit above the hamburger menu icon */
-    background-color: #100952;
+    background-color: #f6d938;
+    margin-top:70px;
+    z-index:-1;
   }
   
   .sidenav.active {
@@ -84,18 +72,20 @@ body {
   
   .sidenav__list-item {
     padding: 20px 20px 20px 40px;
-    color: #ddd;
+    color: #05293b;
   }
   
   .sidenav__list-item:hover {
-    background-color: rgba(255, 255, 255, 0.2);
+    background-color: #05293b;
     cursor: pointer;
+    color:white;
   }
   
   .main {
     grid-area: main;
     background-color: #fffefe;
-    color:rgb(0, 0, 0)
+    color:rgb(0, 0, 0);
+    margin-top:120px;
   }
   
   .main-header {
@@ -104,7 +94,7 @@ body {
     margin: 20px;
     padding: 20px;
     height: 150px;
-    background-color: #e3e4e6;
+    background-color: #2e3033;
     color: slategray;
   }
   
@@ -232,7 +222,7 @@ body {
 } */
 
 .header__avatar {
-    color:white;
+    color:rgb(10, 10, 10);
     font-size: 30px;
 }
 
