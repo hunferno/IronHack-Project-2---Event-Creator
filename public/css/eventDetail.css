@@ -33,15 +33,7 @@
   font-size: 40px;
   color: #ffffff;
 }
-/* #image-event {
-  display: flex;
-  justify-content: center;
-  background-image: url(../img/background-img.jpg);
-  background-position: 80% 60%;
-  width: 90%;
-  height: 350px;
-  margin: auto;
-} */
+
 #image-event img {
   height: 350px;
   width: 550px;
@@ -118,7 +110,6 @@
   text-align: center;
 }
 #container-button .text-participate {
-  /* width: 200px; */
   line-height: 20px;
   margin-bottom: 20px;
   padding: 20px;
@@ -126,7 +117,6 @@
   text-align: center;
 }
 #container-button .localisation {
-  /* width: 200px; */
   margin-top: 20px;
   padding: 20px;
   text-align: center;

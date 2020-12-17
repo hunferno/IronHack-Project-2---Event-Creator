@@ -5,7 +5,7 @@
   flex-direction: column;
   display: flex;
   margin: auto;
-  margin-top: 40px;
+  margin-top: 140px;
   margin-bottom: 40px;
   padding: 50px;
 }
@@ -36,8 +36,15 @@
 }
 
 .btn-publish {
-  background-color: pink;
+  background-color: white;
   width: 18vh;
+  border: solid #05293b;
+}
+
+.btn-publish:hover {
+  background-color: #05293b;
+  width: 18vh;
+  color: white;
 }
 
 .Neon {
