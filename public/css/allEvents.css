@@ -72,13 +72,14 @@
 .products li a .image {
     display:block;
     width: 150px;
-    height: 90px;
+    max-height: 100px;
     position:relative;
+
 }
 
 .products li a .image img {
 width: 100%;
-
+height: 100%;
 }
 
 .products li a h1 {

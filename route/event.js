@@ -22,7 +22,11 @@ router.get("/allEvents", async (req, res, next) => {
 // *************Display event detail in eventDetail Page***********
 router.get("/eventDetail/:id", async (req, res, next) => {
   try {
-    const eventDetail = await EventModel.findById(req.params.id);
+    const eventDetail = await EventModel.findById(req.params.id).populate(
+      "id_user"
+    );
+    console.log("------>");
+    console.log(eventDetail);
     eventDetail.full =
       eventDetail.participant_ids.length >= eventDetail.maxParticipant;
 
