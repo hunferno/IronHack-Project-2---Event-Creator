@@ -6,7 +6,6 @@
     position: fixed;
     min-height: 500px;
     margin-bottom: 30px;
-    margin-top: 110px;
   }
   
   .classAll {
@@ -114,10 +113,15 @@ width: 100%;
 #mainEvent {
     width: 100%;
     margin : auto; 
-    padding-left: 50px;
-   
+    padding-left: 50px; 
+}
 
-    
+#mainEvent p {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   line-height: 30px;
+   text-decoration: underline #f6d938;
 }
 
 #mainEvent * {
