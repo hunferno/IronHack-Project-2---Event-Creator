@@ -6,7 +6,8 @@
 
 <section id="sectionId">
     <main id="mainEvent">
-                <p>Here, you can find the current events.<br> If you interested by one event, just click on it, read the description and participate.<br> Check on the remaining seat ! Join us and let's have some fun !</p>
+        <p>Here, you can find the current events.<br> If you interested by one event, just click on it, read the
+            description and participate.<br> Check on the remaining seat ! Join us and let's have some fun !</p>
 
         <ul class="products">
             {{#each allEvents}}
@@ -17,6 +18,7 @@
                     </div>
                     <h1> {{this.title}} </h1>
                     <div class="informations">
+                        <buton>Num of participants : {{this.participant_ids.length}}</buton>
                         <buton>Seat Remaining : {{this.seat_remaining}}</buton>
                     </div>
                 </a>

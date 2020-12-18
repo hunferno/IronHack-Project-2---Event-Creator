@@ -72,6 +72,7 @@
 .products li a .image {
     display:block;
     width: 150px;
+    height: 90px;
     position:relative;
 }
 
